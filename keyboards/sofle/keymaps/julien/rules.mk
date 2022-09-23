@@ -1,0 +1,16 @@
+VIA_ENABLE = yes
+RGBLIGHT_ENABLE         = no
+RGB_MATRIX_ENABLE       = yes       # Enable per-key coordinate based RGB effects. Do not enable with RGBlight
+RGB_MATRIX_DRIVER       = WS2812    # Enable per-key coordinate based RGB effects. Do not enable with RGBlight
+RGB_MATRIX_KEYPRESSES   = yes       # Enable reactive per-key effects.
+RGB_MATRIX_FRAMEBUFFER_EFFECTS = no # Enable frame buffer effects like the typing heatmap.
+MOUSEKEY_ENABLE         = yes
+OLED_ENABLE             = yes
+OLED_DRIVER             = SSD1306
+ENCODER_ENABLE          = yes
+CONSOLE_ENABLE          = no
+COMMAND_ENABLE          = no
+GRAVE_ESC_ENABLE        = no
+SPACE_CADET_ENABLE      = no
+EXTRAKEY_ENABLE         = yes
+COMBO_ENABLE            = no
