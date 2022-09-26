@@ -24,11 +24,13 @@
 #define DISABLE_LEADER     // 0
 
 #define LAYER_STATE_8BIT
-#define NO_ACTION_ONESHOT
-#define NO_ACTION_TAPPING
+//#define NO_ACTION_TAPPING
 #define NO_MUSIC_MODE
 
-#define TAPPING_TOGGLE 2
+// Tapping settings
+#define TAP_CODE_DELAY            10
+#define TAPPING_TOGGLE            2   //Tap TT twice to toggle layer
+#define TAPPING_TERM              160 //Tapping duration in ms
 
 // Add RGB underglow
 // by defining in the keyboard, incompatible keymaps will fail to compile.

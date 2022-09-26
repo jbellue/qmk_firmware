@@ -39,7 +39,9 @@
         action_exec(encoder_event);
     }
 
-    void matrix_scan_user(void) { encoder_action_unregister(); }
+    void matrix_scan_user(void) {
+        encoder_action_unregister();
+    }
 
     bool encoder_update_user(uint8_t index, bool clockwise) {
         encoder_action_register(index, clockwise);

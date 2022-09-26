@@ -14,7 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "sofle.h"
+#include "keyhivematrix.h"
 
 #ifdef RGB_MATRIX_ENABLE
   // Physical Layout
@@ -34,55 +34,57 @@
 
 led_config_t g_led_config = {
     {
-        {  11,  12,  21,  22,  31,  32 },
-        {  10,  13,  20,  23,  30,  33 },
-        {  9,   14,  19,  24,  29,  34},
-        {  8,   15,  18,  25,  28,  35},
-        {  7,   16,  17,  26,  27,  NO_LED },
+        {  10,  11,  19,  20,  29,  30          },
+        {  9,   12,  18,  21,  28,  31,  NO_LED },
+        {  8,   13,  17,  22,  27,  32,  NO_LED },
+        {  7,   14,  16,  23,  26,  33,  NO_LED },
+        {            15,  24,  25,  34,  35     },
 
-        {  47,  48,  57,  58,  67,  68},
-        {  46,  49,  56,  59,  66,  69},
-        {  45,  50,  55,  60,  65,  70},
-        {  44,  51,  54,  61,  64,  71},
-        {  43,  52,  53,  62,  63,  NO_LED }
+        {  46,  47,  55,  56,  65,  66          },
+        {  45,  48,  54,  57,  64,  67,  NO_LED },
+        {  44,  49,  53,  58,  63,  68,  NO_LED },
+        {  43,  50,  52,  59,  62,  69,  NO_LED },
+        {            51,  60,  61,  70,  71     }
     },
     {
-       // Left side underglow
-        {96, 40}, {16, 20}, {48, 10}, {80, 18}, {88, 60}, {56, 57}, {24,60},
+        // Left side underglow
+        { 91,  12}, { 64,  12}, { 36,  16}, { 36,  43}, { 64,  39}, { 91,  39}, {121,  56},
         // Left side Matrix
-        {32, 57}, { 0, 48}, { 0, 36}, { 0, 24}, { 0, 12},
-        {16, 12}, {16, 24}, {16, 36}, {16, 48}, {48, 55},
-        {64, 57}, {32, 45}, {32, 33}, {32, 21}, {32,  9},
-        {48,  7}, {48, 19}, {48, 31}, {48, 43}, {80, 59},
-        {96, 64}, {64, 45}, {64, 33}, {64, 21}, {64,  9},
-        {80, 10}, {80, 22}, {80, 34}, {80, 47},
+        { 36,   5}, { 50,   5}, { 64,   2}, { 78,   0}, { 91,   2}, {103,   4},
+        { 36,  19}, { 50,  19}, { 64,  15}, { 78,  13}, { 91,  15}, {103,  17},
+        { 36,  32}, { 50,  32}, { 64,  28}, { 78,  26}, { 91,  28}, {103,  30},
+        { 36,  46}, { 50,  46}, { 64,  41}, { 78,  39}, { 91,  41}, {103,  43},
+                                { 64,  54}, { 78,  52}, { 91,  54}, {107,  58}, {117,  64},
 
 
         // Right side underglow
-        {128, 40}, {208, 20}, {176, 10}, {144, 18}, {136, 60}, {168, 57}, {200,60},
+        {142,  56}, {208,  39}, {176,  39}, {144,  43}, {136,  16}, {168,  12}, {200,  12},
         // Right side Matrix
-        {192, 57}, {224, 48}, {224, 36}, {224, 24}, {224, 12},
-        {208, 12}, {208, 24}, {208, 36}, {208, 48}, {176, 55},
-        {160, 57}, {192, 45}, {192, 33}, {192, 21}, {192,  9},
-        {176,  7}, {176, 19}, {176, 31}, {176, 43}, {144, 59},
-        {128, 64}, {160, 45}, {160, 33}, {160, 21}, {160,  9},
-        {144, 10}, {144, 22}, {144, 34}, {144, 47},
+        {230,   5}, {216,   5}, {202,   2}, {188,   0}, {174,   2}, {160,   4},
+        {230,  19}, {216,  19}, {202,  15}, {188,  13}, {174,  15}, {160,  17},
+        {230,  32}, {216,  32}, {202,  28}, {188,  26}, {174,  28}, {160,  30},
+        {230,  46}, {216,  46}, {202,  41}, {188,  39}, {174,  41}, {160,  43}, 
+                                {202,  54}, {188,  52}, {174,  54}, {156,  58}, {147,  64},
+                    
+                     
+                    
+                    
+         
     },
     {
-        LED_FLAG_NONE, LED_FLAG_UNDERGLOW, LED_FLAG_UNDERGLOW, LED_FLAG_UNDERGLOW, LED_FLAG_UNDERGLOW, LED_FLAG_UNDERGLOW, LED_FLAG_UNDERGLOW,
-        LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT,
-        LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT,
-        LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT,
-        LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT,
-        LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT,
-        LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT,
-        LED_FLAG_NONE, LED_FLAG_UNDERGLOW, LED_FLAG_UNDERGLOW, LED_FLAG_UNDERGLOW, LED_FLAG_UNDERGLOW, LED_FLAG_UNDERGLOW, LED_FLAG_UNDERGLOW,
-        LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT,
-        LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT,
-        LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT,
-        LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT,
-        LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT,
-        LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT
+        LED_FLAG_UNDERGLOW, LED_FLAG_UNDERGLOW, LED_FLAG_UNDERGLOW, LED_FLAG_UNDERGLOW, LED_FLAG_UNDERGLOW, LED_FLAG_UNDERGLOW, LED_FLAG_UNDERGLOW,
+        LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,
+        LED_FLAG_MODIFIER,  LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,
+        LED_FLAG_MODIFIER,  LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,
+        LED_FLAG_MODIFIER,  LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,
+                                                LED_FLAG_MODIFIER,  LED_FLAG_MODIFIER,  LED_FLAG_MODIFIER,  LED_FLAG_MODIFIER,  LED_FLAG_MODIFIER,
+
+        LED_FLAG_UNDERGLOW, LED_FLAG_UNDERGLOW, LED_FLAG_UNDERGLOW, LED_FLAG_UNDERGLOW, LED_FLAG_UNDERGLOW, LED_FLAG_UNDERGLOW, LED_FLAG_UNDERGLOW,
+                            LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,
+                            LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,  LED_FLAG_MODIFIER,
+                            LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,
+                            LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,  LED_FLAG_KEYLIGHT,  LED_FLAG_MODIFIER,
+        LED_FLAG_MODIFIER,  LED_FLAG_MODIFIER,  LED_FLAG_MODIFIER,  LED_FLAG_MODIFIER,  LED_FLAG_MODIFIER
     }
 };
 

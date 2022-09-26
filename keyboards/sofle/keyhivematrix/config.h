@@ -20,10 +20,13 @@
 
 /* USB Device descriptor parameter */
 #define VENDOR_ID       0xFC32
-#define PRODUCT_ID      0x0287
-#define DEVICE_VER      0x0001
+#define PRODUCT_ID      0x1287 //Original is 0x0287 but we do not want to load default VIA keymap as it has errors for the bottom row
+#define DEVICE_VER      0x0002
 #define MANUFACTURER    Keyhive
-#define PRODUCT         Sofle
+#define PRODUCT         Sofle_Julien
+
+// Set which side is master
+#define MASTER_LEFT
 
 // Key matrix size
 // Rows are doubled-up. Added extra column for rotary encoder VIA mapping.
@@ -31,13 +34,12 @@
 #define MATRIX_COLS  7
 
 // wiring of each half
-#define MATRIX_ROW_PINS       { C6, D7, E6, B4, B5 }
-#define MATRIX_COL_PINS       { B6, B2, B3, B1, F7, F6, NO_PIN } // A virtual pin is needed for the encoder key matrix in via.
-#define MATRIX_ROW_PINS_RIGHT { C6, D7, E6, B4, B5 }
-#define MATRIX_COL_PINS_RIGHT { F6, F7, B1, B3, B2, B6, NO_PIN } // A virtual pin is needed for the encoder key matrix in via.
-#define DIODE_DIRECTION COL2ROW
-
-#define DEBOUNCE        5
+#define MATRIX_ROW_PINS           { C6, D7, E6, B4, B5 }
+#define MATRIX_COL_PINS           { B6, B2, B3, B1, F7, F6, NO_PIN } // A virtual pin is needed for the encoder key matrix in via.
+#define MATRIX_ROW_PINS_RIGHT     { C6, D7, E6, B4, B5 }
+#define MATRIX_COL_PINS_RIGHT     { F6, F7, B1, B3, B2, B6, NO_PIN } // A virtual pin is needed for the encoder key matrix in via.
+#define DIODE_DIRECTION           COL2ROW
+#define DEBOUNCE                  6
 
 // Encoder support
 #define ENCODERS_PAD_A            { F5 }
@@ -47,20 +49,16 @@
 #define ENCODER_RESOLUTIONS       { 4 }
 #define ENCODER_RESOLUTIONS_RIGHT { 2 }
 
-#define TAP_CODE_DELAY  10
-
-// Communication between sides
-#define SOFT_SERIAL_PIN D2
+#define SOFT_SERIAL_PIN           D2  // Communication between sides
 
 // OLED settings
 #define OLED_TIMEOUT    80000
 #define OLED_BRIGHTNESS 90
-
-#define RGB_DI_PIN        D3
+#define SPLIT_OLED_ENABLE
 
 #ifdef RGB_MATRIX_ENABLE
+#    define RGB_DI_PIN        D3
 #    define RGBLED_NUM        74 // Number of LEDs
 #    define DRIVER_LED_TOTAL  RGBLED_NUM
 #    define RGB_MATRIX_SPLIT  { 37, 37 }
-#    define SPLIT_TRANSPORT_MIRROR
 #endif
