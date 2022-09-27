@@ -40,6 +40,7 @@
 #define MATRIX_COL_PINS_RIGHT     { F6, F7, B1, B3, B2, B6, NO_PIN } // A virtual pin is needed for the encoder key matrix in via.
 #define DIODE_DIRECTION           COL2ROW
 #define DEBOUNCE                  6
+#define SPLIT_TRANSPORT_MIRROR
 
 // Encoder support
 #define ENCODERS_PAD_A            { F5 }
