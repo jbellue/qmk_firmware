@@ -36,8 +36,9 @@
 // by defining in the keyboard, incompatible keymaps will fail to compile.
 #ifdef RGB_MATRIX_ENABLE
 // The number of LEDs connected
-#    define RGB_MATRIX_KEYPRESSES // reacts to keypresses
-#    define RGB_DISABLE_WHEN_USB_SUSPENDED // turn off effects when suspended
+#    define RGB_MATRIX_KEYPRESSES               // reacts to keypresses
+#    define RGB_DISABLE_TIMEOUT 600000          // 10m * 60s * 1000ms
+#    define RGB_DISABLE_WHEN_USB_SUSPENDED true // turn off effects when suspended
 #    define RGB_MATRIX_FRAMEBUFFER_EFFECTS
 //#    define RGB_MATRIX_LED_PROCESS_LIMIT (DRIVER_LED_TOTAL + 4) / 5 // limits the number of LEDs to process in an animation per task run (increases keyboard responsiveness)
 //#    define RGB_MATRIX_LED_FLUSH_LIMIT 16 // limits in milliseconds how frequently an animation will update the LEDs. 16 (16ms) is equivalent to limiting to 60fps (increases keyboard responsiveness)
