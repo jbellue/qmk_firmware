@@ -30,28 +30,39 @@ static void render_logo(void) {
 }
 
 static void print_status_narrow(void) {
-    oled_write_ln_P(PSTR("\npayrc\n\n\n"), false);
     // Print current layer
-    oled_write_ln_P(PSTR("LAYER"), false);
+    oled_write_P(PSTR("Layer"), false);
     switch (get_highest_layer(layer_state)) {
         case _QWERTY:
-            oled_write_P(PSTR("Base\n"), false);
+            oled_write_ln_P(PSTR(" BAS\n\n"), false);
             break;
         case _LOWER:
-            oled_write_P(PSTR("Lower"), false);
+            oled_write_ln_P(PSTR(" SPC\n\n"), true);
             break;
         case _RAISE:
-            oled_write_P(PSTR("Raise"), false);
+            oled_write_ln_P(PSTR(" NAV\n\n"), true);
             break;
         case _ADJUST:
-            oled_write_P(PSTR("Adjst"), false);
+            oled_write_ln_P(PSTR(" RGB\n\n"), true);
             break;
         default:
-            oled_write_ln_P(PSTR("Undef"), false);
+            oled_write_P(PSTR("undef\n\n"), true);
     }
-    oled_write_P(PSTR("\n\n"), false);
-    led_t led_usb_state = host_keyboard_led_state();
-    oled_write_ln_P(PSTR("CPSLK"), led_usb_state.caps_lock);
+    const led_t led_state = host_keyboard_led_state();
+    oled_write_P(PSTR("-----"), false);
+    oled_write_P(PSTR("Stats"), false);
+    oled_write_P(led_state.num_lock    ? PSTR("num:*") : PSTR("num:."), false);
+    oled_write_P(led_state.caps_lock   ? PSTR("cap:*") : PSTR("cap:."), false);
+    oled_write_P(led_state.scroll_lock ? PSTR("scr:*") : PSTR("scr:."), false);
+
+    // Host Keyboard RGB backlight status
+    oled_write_P(PSTR("-----"), false);
+    const uint8_t led_mode = rgblight_get_mode();
+    oled_write_P((led_mode < 10) ? PSTR("Light   ") : PSTR("Light  "), false);
+
+    static char led_buf[4] = {'\0'};
+    itoa((uint8_t)rgblight_get_mode(), led_buf, 10);
+    oled_write(led_buf, false);
 }
 
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
