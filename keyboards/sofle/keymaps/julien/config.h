@@ -32,6 +32,8 @@
 #define TAPPING_TOGGLE            2   //Tap TT twice to toggle layer
 #define TAPPING_TERM              160 //Tapping duration in ms
 
+#define OLED_FONT_H "keyboards/sofle/keymaps/julien/glcdfont.c"
+
 // Add RGB underglow
 // by defining in the keyboard, incompatible keymaps will fail to compile.
 #ifdef RGB_MATRIX_ENABLE
@@ -49,7 +51,7 @@
 #    define RGB_MATRIX_SPD_STEP 10
 
 #     undef ENABLE_RGB_MATRIX_ALPHAS_MODS
-#    define ENABLE_RGB_MATRIX_GRADIENT_UP_DOWN
+#     undef ENABLE_RGB_MATRIX_GRADIENT_UP_DOWN
 #    define ENABLE_RGB_MATRIX_BREATHING
 #     undef ENABLE_RGB_MATRIX_BAND_SAT
 #     undef ENABLE_RGB_MATRIX_BAND_VAL
@@ -63,7 +65,7 @@
 #     undef ENABLE_RGB_MATRIX_CYCLE_OUT_IN
 #    define ENABLE_RGB_MATRIX_CYCLE_OUT_IN_DUAL
 #     undef ENABLE_RGB_MATRIX_RAINBOW_MOVING_CHEVRON
-#    define ENABLE_RGB_MATRIX_DUAL_BEACON
+#     undef ENABLE_RGB_MATRIX_DUAL_BEACON
 #     undef ENABLE_RGB_MATRIX_CYCLE_PINWHEEL
 #     undef ENABLE_RGB_MATRIX_CYCLE_SPIRAL
 #    define ENABLE_RGB_MATRIX_RAINBOW_BEACON
