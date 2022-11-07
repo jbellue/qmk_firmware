@@ -100,6 +100,11 @@ static const char PROGMEM bottom_effect_border[] = {0x10, 0xcd, 0xcd, 0xcd, 0x0e
 #define RIGHT_BORDER 0x0c
 
 
+
+char poor_man_itoa(int input) {
+    return (char)input + 0x30;
+}
+
 static void render_main_oled(void) {
     const uint8_t highest_layer = get_highest_layer(layer_state);
     render_main_logo(highest_layer != _QWERTY);
@@ -182,24 +187,20 @@ static void render_main_oled(void) {
     oled_write_P(top_effect_border, false);
     // oled_write_P(left_effect_border, false);
     const uint8_t led_mode = rgblight_get_mode();
-    char effect_top_digit = led_mode > 9 ? '1' : ' ';
-    char effect_lower_digit = led_mode % 10 + 0x30;
-    if (led_mode > 9) {
-        effect_top_digit = '1';
-        effect_lower_digit = led_mode % 10 + 0x30;
+    // assume effect is lower than 10
+    char effect_top_digit = poor_man_itoa(led_mode % 10);
+    char effect_lower_digit;
+    if (led_mode >= 10) {
+        effect_lower_digit = effect_top_digit;
+        effect_top_digit = poor_man_itoa(led_mode / 10);
     }
     else {
-        effect_top_digit = led_mode % 10 + 0x30;
         effect_lower_digit = ' ';
     }
-    static char led_buf[6] = {'\0'};
-    led_buf[0] = LEFT_BORDER;
-    led_buf[1] = ' ';
+    static char led_buf[] = {LEFT_BORDER, ' ', ' ', ' ', RIGHT_BORDER, '\0'};
     led_buf[2] = effect_top_digit;
     led_buf[3] = effect_lower_digit;
-    led_buf[4] = RIGHT_BORDER;
     oled_write(led_buf, false);
-    // oled_write_P(right_effect_border, false);
     oled_write_P(bottom_effect_border, false);
 }
 
