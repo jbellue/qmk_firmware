@@ -55,15 +55,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_LSFT, KC_Z, KC_X,    KC_C,    KC_V,     KC_B,       KC_VOLD,       KC_MNXT, KC_N,       KC_M,     KC_COMM, KC_DOT, KC_SLSH, KC_RSFT,
                  KC_LGUI, KC_LALT, KC_LCTRL, MO(_LOWER), KC_SPC,        KC_ENT , MO(_RAISE), KC_RCTRL, KC_RALT, KC_RGUI
 ),
-/* COLEMAK
+/* COLEMAK-DH
  * ╭──────┬──────┬──────┬──────┬──────┬──────╮                         ╭──────┬──────┬──────┬──────┬──────┬──────╮
  * │  `   │   1  │   2  │   3  │   4  │   5  ├───────╮    E    ╭───────┤   6  │   7  │   8  │   9  │   0  │  -   │
  * ├──────┼──────┼──────┼──────┼──────┼──────┤ VolUp │<   N   >│ Prev  ├──────┼──────┼──────┼──────┼──────┼──────┤
- * │ ESC  │   Q  │   W  │   F  │   P  │   G  ├───────┤    C    ├───────┤   J  │   L  │   U  │   Y  │   :  │ Bspc │
+ * │ ESC  │   Q  │   W  │   F  │   P  │   B  ├───────┤    C    ├───────┤   J  │   L  │   U  │   Y  │   ;  │ Bspc │
  * ├──────┼──────┼──────┼──────┼──────┼──────┤ Mute  │<   O   >│ Play  ├──────┼──────┼──────┼──────┼──────┼──────┤
- * │ Tab  │   A  │   R  │   S  │   T  │   D  ├───────┤    D    ├───────┤   H  │   N  │   E  │   I  │   O  │  '   │
+ * │ Tab  │   A  │   R  │   S  │   T  │   G  ├───────┤    D    ├───────┤   M  │   N  │   E  │   I  │   O  │  '   │
  * ├──────┼──────┼──────┼──────┼──────┼──────┤ VolDn │<   E   >│ Next  ├──────┼──────┼──────┼──────┼──────┼──────┤
- * │LShift│   Z  │   X  │   C  │   V  │   B  ├───┬───┴───╮R╭───┴───┬───┤   K  │   M  │   ,  │   .  │   /  │RShift│
+ * │LShift│   Z  │   X  │   C  │   D  │   V  ├───┬───┴───╮R╭───┴───┬───┤   K  │   H  │   ,  │   .  │   /  │RShift│
  * ╰──────┴──────┼──────┼──────┼──────┼──────┤  / Space /   \ Enter \  ├──────┼──────┼──────┼──────┼──────┴──────╯
  *               │ LGUI │ LAlt │ LCTR │MO LOW│ /       /     \       \ │MORAIS│ RCTR │ RAlt │ RGUI │
  *               ╰──────┴──────┴──────┴──────┴────────╯       ╰────────┴──────┴──────┴──────┴──────╯
@@ -71,9 +71,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_COLEMAK] = LAYOUT(
   KC_GRV,  KC_1, KC_2,    KC_3,    KC_4,     KC_5,                               KC_6,       KC_7,     KC_8,    KC_9,   KC_0,    KC_MINS,
-  KC_ESC,  KC_Q, KC_W,    KC_F,    KC_P,     KC_G,       KC_VOLU,       KC_MPRV, KC_J,       KC_L,     KC_U,    KC_Y,   KC_SCLN, KC_BSPC,
-  KC_TAB,  KC_A, KC_R,    KC_S,    KC_T,     KC_D,       KC_MUTE,       KC_MPLY, KC_H,       KC_N,     KC_E,    KC_I,   KC_O,    KC_QUOT,
-  KC_LSFT, KC_Z, KC_X,    KC_C,    KC_V,     KC_B,       KC_VOLD,       KC_MNXT, KC_K,       KC_M,     KC_COMM, KC_DOT, KC_SLSH, KC_RSFT,
+  KC_ESC,  KC_Q, KC_W,    KC_F,    KC_P,     KC_B,       KC_VOLU,       KC_MPRV, KC_J,       KC_L,     KC_U,    KC_Y,   KC_SCLN, KC_BSPC,
+  KC_TAB,  KC_A, KC_R,    KC_S,    KC_T,     KC_G,       KC_MUTE,       KC_MPLY, KC_M,       KC_N,     KC_E,    KC_I,   KC_O,    KC_QUOT,
+  KC_LSFT, KC_Z, KC_X,    KC_C,    KC_D,     KC_V,       KC_VOLD,       KC_MNXT, KC_K,       KC_H,     KC_COMM, KC_DOT, KC_SLSH, KC_RSFT,
                  KC_LGUI, KC_LALT, KC_LCTRL, MO(_LOWER), KC_SPC,        KC_ENT , MO(_RAISE), KC_RCTRL, KC_RALT, KC_RGUI
 ),
 
