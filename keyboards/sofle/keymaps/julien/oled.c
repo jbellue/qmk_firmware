@@ -110,7 +110,7 @@ static void render_main_oled(void) {
     render_main_logo(highest_layer != _QWERTY);
     // Set the current layer tile;
     // line 1
-    if (highest_layer == _QWERTY) {
+    if (highest_layer == _QWERTY || highest_layer == _COLEMAK) {
         oled_write_P(qwerty_on_1, false);
         oled_write_char(ON_OFF_1, false);
     }
@@ -125,7 +125,7 @@ static void render_main_oled(void) {
         oled_write_P(special_off_1, false);
     }
     // line 2
-    if (highest_layer == _QWERTY) {
+    if (highest_layer == _QWERTY || highest_layer == _COLEMAK) {
         oled_write_P(qwerty_on_2, false);
         oled_write_char(ON_OFF_2, false);
     }
