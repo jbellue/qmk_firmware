@@ -1,4 +1,4 @@
-VIA_ENABLE              = no
+VIA_ENABLE              = yes
 RGB_MATRIX_ENABLE       = yes       # Enable per-key coordinate based RGB effects. Do not enable with RGBlight
 RGB_MATRIX_DRIVER       = WS2812    # Enable per-key coordinate based RGB effects. Do not enable with RGBlight
 RGB_MATRIX_KEYPRESSES   = yes       # Enable reactive per-key effects.
@@ -10,7 +10,7 @@ COMMAND_ENABLE          = no
 GRAVE_ESC_ENABLE        = no
 SPACE_CADET_ENABLE      = no
 EXTRAKEY_ENABLE         = yes       # Audio control and System control
-MOUSEKEY_ENABLE         = yes       # Mouse keys
+MOUSEKEY_ENABLE         = no        # Mouse keys
 NKRO_ENABLE             = yes       # Enable N-Key Rollover
 COMBO_ENABLE            = no
 AUDIO_ENABLE            = no        # Audio output
