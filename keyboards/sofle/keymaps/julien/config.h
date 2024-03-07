@@ -27,7 +27,7 @@
 //#define NO_ACTION_TAPPING
 #define NO_MUSIC_MODE
 
-#define DYNAMIC_KEYMAP_LAYER_COUNT 6
+#define DYNAMIC_KEYMAP_LAYER_COUNT 5
 
 // Tapping settings
 #define TAP_CODE_DELAY            10
