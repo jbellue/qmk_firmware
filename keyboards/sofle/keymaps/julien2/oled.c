@@ -96,7 +96,7 @@ static const char PROGMEM rgb_on_2[] =  {0xb3, 0xb4, 0};
 // ╚═══╝    ╚═══╝
 static const char PROGMEM top_effect_border[] =    {0x0f, 0xcd, 0xcd, 0xcd, 0x09, 0};
 static const char PROGMEM bottom_effect_border[] = {0x10, 0xcd, 0xcd, 0xcd, 0x0e, 0};
-#define LEFT_BORDER 0x0b
+#define LEFT_BORDER  0x0b
 #define RIGHT_BORDER 0x0c
 
 
@@ -147,9 +147,9 @@ static void render_main_oled(void) {
     }
     else {
         oled_write_P(nav_off_1, false);
-        oled_write_char((highest_layer == _ADJUST) ? OFF_ON_1 : OFF_OFF_1, false);
+        oled_write_char((highest_layer == _RGB) ? OFF_ON_1 : OFF_OFF_1, false);
     }
-    if (highest_layer == _ADJUST) {
+    if (highest_layer == _RGB) {
         oled_write_P(rgb_on_1, false);
     }
     else {
@@ -162,9 +162,9 @@ static void render_main_oled(void) {
     }
     else {
         oled_write_P(nav_off_2, false);
-        oled_write_char((highest_layer == _ADJUST) ? OFF_ON_2 : OFF_OFF_2, false);
+        oled_write_char((highest_layer == _RGB) ? OFF_ON_2 : OFF_OFF_2, false);
     }
-    if (highest_layer == _ADJUST) {
+    if (highest_layer == _RGB) {
         oled_write_ln_P(rgb_on_2, false);
     }
     else {
@@ -221,4 +221,3 @@ bool oled_task_user(void) {
 }
 
 #endif
-
