@@ -124,9 +124,9 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
 #ifdef ENCODER_MAP_ENABLE
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
-    [_QWERTY] =     { ENCODER_CCW_CW(KC_VOLU, KC_VOLD), ENCODER_CCW_CW(KC_MPRV,  KC_MNXT) },
-    [_SYMBOL] =     { ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(_______,  _______) },
-    [_NAVIGATION] = { ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(_______,  _______) },
-    [_RGB] =        { ENCODER_CCW_CW(RGB_HUI, RGB_HUD), ENCODER_CCW_CW(RGB_RMOD, RGB_MOD) }
+    [_QWERTY] =     { ENCODER_CCW_CW(KC_VOLD, KC_VOLU), ENCODER_CCW_CW(KC_MNXT, KC_MPRV) },
+    [_SYMBOL] =     { ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(_______, _______) },
+    [_NAVIGATION] = { ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(_______, _______) },
+    [_RGB] =        { ENCODER_CCW_CW(RGB_HUD, RGB_HUI), ENCODER_CCW_CW(RGB_MOD, RGB_RMOD) }
 };
 #endif
