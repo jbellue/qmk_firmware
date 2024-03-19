@@ -102,9 +102,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ├──────┼──────┼──────┼──────┼──────┼──────┤            N            ├──────┼──────┼──────┼──────┼──────┼──────┤
  * │      │      │      │      │      │      ├───────╮    C    ╭───────┤      │      │      │      │      │      │
  * ├──────┼──────┼──────┼──────┼──────┼──────┤       │<   O   >│RGBtogl├──────┼──────┼──────┼──────┼──────┼──────┤
- * │      │ Sat+ │ Bri+ │ Spe+ │ Mod+ │      ├───────╯    D    ╰───────┤      │      │      │      │      │      │
+ * │ Hue+ │ Sat+ │ Bri+ │ Spe+ │ Mod+ │      ├───────╯    D    ╰───────┤      │      │      │      │      │      │
  * ├──────┼──────┼──────┼──────┼──────┼──────┤            E            ├──────┼──────┼──────┼──────┼──────┼──────┤
- * │      │ Sat- │ Bri- │ Spe- │ Mod- │      ├───┬───────╮R╭───────┬───┤      │      │      │      │      │      │
+ * │ Hue- │ Sat- │ Bri- │ Spe- │ Mod- │      ├───┬───────╮R╭───────┬───┤      │      │      │      │      │      │
  * ╰──────┴──────┼──────┼──────┼──────┼──────┤  /       /   \       \  ├──────┼──────┼──────┼──────┼──────┴──────╯
  *               │      │      │      │SymBcs│ /       /     \       \ │HiDel │      │      │      │
  *               ╰──────┴──────┴──────┴──────┴────────╯       ╰────────┴──────┴──────┴──────┴──────╯
@@ -112,8 +112,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_RGB] = LAYOUT(
   RGB_TOG,  XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,                          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   XXXXXXX,  XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,                          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  XXXXXXX,  RGB_SAI,  RGB_VAI, RGB_SPI, RGB_MOD,  XXXXXXX,                          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  XXXXXXX,  RGB_SAD,  RGB_VAD, RGB_SPD, RGB_RMOD, XXXXXXX, XXXXXXX,        RGB_TOG, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  RGB_HUI,  RGB_SAI,  RGB_VAI, RGB_SPI, RGB_MOD,  XXXXXXX,                          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  RGB_HUD,  RGB_SAD,  RGB_VAD, RGB_SPD, RGB_RMOD, XXXXXXX, XXXXXXX,        RGB_TOG, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                       XXXXXXX, XXXXXXX, XXXXXXX,  _______, XXXXXXX,        XXXXXXX, _______, XXXXXXX, XXXXXXX, XXXXXXX
 )
 };
