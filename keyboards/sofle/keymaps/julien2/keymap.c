@@ -24,8 +24,8 @@ enum custom_layers {
     _RGB
 };
 
-#define SFT_SPC LSFT_T(KC_SPC)
-#define SFT_ENT RSFT_T(KC_ENT)
+#define SFT_LBR LSFT_T(KC_LBRC)
+#define SFT_RBR RSFT_T(KC_RBRC)
 #define SYM_BCS LT(_SYMBOL, KC_BSPC)
 #define NAV_DEL LT(_NAVIGATION, KC_DEL)
 
@@ -42,9 +42,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ├──────┼──────┼──────┼──────┼──────┼──────┤ Mute  │<   O   >│ Play  ├──────┼──────┼──────┼──────┼──────┼──────┤
  * │   `  │   A  │   S  │   D  │   F  │   G  ├───────╯    D    ╰───────┤   H  │   J  │   K  │   L  │   ;  │  '   │
  * ├──────┼──────┼──────┼──────┼──────┼──────┤            E            ├──────┼──────┼──────┼──────┼──────┼──────┤
- * │   [  │   Z  │   X  │   C  │   V  │   B  ├───┬───────╮R╭───────┬───┤   N  │   M  │   ,  │   .  │   /  │  ]   │
- * ╰──────┴──────┼──────┼──────┼──────┼──────┤  / LShift/   \RShift \  ├──────┼──────┼──────┼──────┼──────┴──────╯
- *               │ LGUI │ LAlt │ LCTR │SymBcs│ /[Space]/     \[Enter]\ │HiDel │ RCTR │ RAlt │ RGUI │
+ * │ [ [↑]│   Z  │   X  │   C  │   V  │   B  ├───┬───────╮R╭───────┬───┤   N  │   M  │   ,  │   .  │   /  │ ] [↑]│
+ * ╰──────┴──────┼──────┼──────┼──────┼──────┤  /       /   \       \  ├──────┼──────┼──────┼──────┼──────┴──────╯
+ *               │ LGUI │ LAlt │ LCTR │SymBcs│ / Space /     \ Enter \ │HiDel │ RCTR │ RAlt │ RGUI │
  *               ╰──────┴──────┴──────┴──────┴────────╯       ╰────────┴──────┴──────┴──────┴──────╯
  */
 
@@ -52,8 +52,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_ESC,  KC_1, KC_2,    KC_3,    KC_4,    KC_5,                            KC_6,    KC_7,    KC_8,    KC_9,   KC_0,    KC_EQL,
   KC_TAB,  KC_Q, KC_W,    KC_E,    KC_R,    KC_T,                            KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,    KC_MINS,
   KC_GRV,  KC_A, KC_S,    KC_D,    KC_F,    KC_G,                            KC_H,    KC_J,    KC_K,    KC_L,   KC_SCLN, KC_QUOT,
-  KC_LBRC, KC_Z, KC_X,    KC_C,    KC_V,    KC_B,    KC_MUTE,       KC_MPLY, KC_N,    KC_M,    KC_COMM, KC_DOT, KC_SLSH, KC_RBRC,
-                 KC_LGUI, KC_LALT, KC_LCTL, SYM_BCS, SFT_SPC,       SFT_ENT, NAV_DEL, KC_RCTL, KC_RALT, KC_RGUI
+  SFT_LBR, KC_Z, KC_X,    KC_C,    KC_V,    KC_B,    KC_MUTE,       KC_MPLY, KC_N,    KC_M,    KC_COMM, KC_DOT, KC_SLSH, SFT_RBR,
+                 KC_LGUI, KC_LALT, KC_LCTL, SYM_BCS, KC_SPC,        KC_ENT,  NAV_DEL, KC_RCTL, KC_RALT, KC_RGUI
 ),
 
 /* SYMBOL
